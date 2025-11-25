@@ -1,0 +1,151 @@
+*,
+*::before,
+*::after
+{
+    box-sizing: inherit;
+}
+
+
+html
+{
+    scroll-behavior: smooth;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+:root
+{
+    --header-color: rgba(9, 32, 40);
+    --background-color-body: rgba(4, 23, 31);
+    --price-color: rgba(237, 95, 84);
+    --fonts-color: rgba(255, 255, 255);
+    --color-books: rgba(129, 94, 111);
+    --background-color-books-input: rgba(17, 71, 88);
+    --background-color-main: rgba(13, 51, 65);
+    --like-heart-color: rgba(253, 90, 79);
+    --link-color: rgba(128, 128, 128);
+    --underline-color: rgb(109, 171, 197);
+}
+
+
+body
+{
+    margin: 0;
+    background-color: var(--background-color-body);
+}
+
+
+header
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    max-height: 100px;
+    background-color: var(--header-color);
+}
+
+
+nav
+{
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+    margin-left: 30px;
+}
+
+
+h1
+{
+    display: flex;
+    align-items: center;
+    color: var(--fonts-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 35px;
+}
+
+
+.pNav
+{
+    color: var(--price-color);
+    font-size: 42px;
+}
+
+
+.span_nav
+{
+    font-size: 22px;
+    color: var(--fonts-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+
+
+main
+{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+
+.main_container
+{
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-align: left;
+}
+
+
+footer
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--header-color);
+    height: 100px;
+}
+
+
+.footer_container
+{
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--fonts-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+
+.footer_book_link
+{
+    display: flex;
+    gap: 16px;
+}
+
+
+a
+{
+    color: var(--link-color);
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.footer_span
+{
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+
+}

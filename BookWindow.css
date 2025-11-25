@@ -1,0 +1,241 @@
+html
+{
+    scroll-behavior: smooth;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+:root
+{
+    --header-color: rgba(9, 32, 40);
+    --background-color-body: rgba(4, 23, 31);
+    --price-color: rgba(237, 95, 84);
+    --fonts-color: rgba(255, 255, 255);
+    --color-books: rgba(129, 94, 111);
+    --background-color-books-input: rgba(17, 71, 88);
+    --background-color-main: rgba(13, 51, 65);
+    --like-heart-color: rgba(253, 90, 79);
+    --link-color: rgba(128, 128, 128);
+    --underline-color: rgb(109, 171, 197);
+}
+
+
+.book_advertisment
+{
+    width: 500px;
+    height: 800px;
+    background-color: var(--background-color-main);
+    border-radius: 32px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+h2
+{
+    display: flex;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 28px;
+    margin: 0;
+    padding: 30px 0 30px 0;
+}
+
+
+.underline
+{
+    border-style: solid;
+    border-width: 2px;
+    color: var(--underline-color);
+}
+
+
+.book_icon
+{
+    display: flex;
+    justify-content: center;
+    padding: 30px 0 30px 0;
+    background-color: var(--background-color-books-input);
+}
+
+
+.price_and_likes
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.price
+{
+    color: var(--price-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    padding-left: 20px;
+}
+
+
+.likes
+{
+    color: aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 100;
+}
+
+
+.liked_container
+{
+    display: flex;
+    gap: 20px;
+    padding-right: 30px;
+}
+
+
+.like_icon
+{
+    display: flex;
+    cursor: pointer;
+}
+
+
+table
+{
+    width: 100%;
+    display: flex;
+    margin-left: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    padding-bottom: 30px;
+}
+
+
+h3
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+    margin-left: 20px;
+}
+
+
+.comments
+{
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: 100;
+    overflow-y: auto;
+    gap: 30px;
+    overflow-wrap: break-word;
+}
+
+
+.comments::-webkit-scrollbar
+{
+    width: 8px;
+    height: 150px;
+    border-radius: 50px;
+}
+
+
+.comments::-webkit-scrollbar-track
+{
+    background-color: var(--background-color-body);
+    border-radius: 4px;
+}
+
+
+.comments::-webkit-scrollbar-thumb
+{
+    background: var(--underline-color);
+    border-radius: 50px;
+}
+
+
+.comment_name
+{
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.comment_text
+{
+    display: flex;
+    align-self: flex-end;
+    margin-right: 20px;
+
+}
+
+
+.name_and_text
+{
+    display: flex;
+}
+
+
+input
+{
+    width: 75%;
+    height: 45px;
+    margin-right: 8px;
+    margin-top: 20px;
+    background-color: var(--background-color-books-input);
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 100;
+    color: var(--fonts-color);
+    padding-left: 16px;
+    border-style: solid;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom-style: 0;
+    border-width: 4px;
+    border-color: var(--underline-color);
+
+}
+
+.input_name
+{
+    width: 140px;
+    margin-left: 20px;
+}
+
+.send_arrow
+{
+    width: 30px;
+    height: 30px;
+    background-color: var(--underline-color);
+    -webkit-mask-image: url('./img/icons8-hoch-2-30.png');
+    mask-image: url('./img/icons8-hoch-2-30.png');
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    cursor: pointer;
+
+}
+
+.send_img
+{
+    display: flex;
+    align-items: flex-end;
+    margin-right: 15px;
+}
+
+button
+{
+    background-color: transparent;
+    border-radius: 5px;
+}
