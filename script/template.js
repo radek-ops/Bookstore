@@ -6,10 +6,10 @@ function addBooks(index) {
     </div>
           <div class="underline"></div>
               <div class="price_and_likes">
-               <p class="price">${booksArry[index].price} €</p>
-               <div class="liked_container"><p class="likes">${booksArry[index].likes}</p>
-               <img class="like_icon" src="./img/icons8-herzen-50.png" alt="dislike herz"
-               onclick="likeClick()"></div>
+               <p class="price">${booksArry[index].price.toFixed(2).replace(".", ",")} €</p>
+               <div class="liked_container"><p id="sumLikes${index}" class="likes">${booksArry[index].likes}</p>
+               <button class="like_button" typ="button" onclick="likeClick(${index})"><img id="likeIcon${index}" class="like_icon" src="./img/icons8-herzen-50.png"
+              ></button></div>
          </div>
     <table>
         <tbody>
@@ -45,8 +45,9 @@ function addComments(singleComment) {
 
 function inputComment(index) {
     return ` <form class="send_img">
-                   <input id="nameInput${index}" aria-label="Name eingeben" class="input_name" type="text" placeholder="Dein Name:" required>
-                   <input id="textInput${index}" aria-label="Kommentarfeld" autocomplete="off" type="text" placeholder="Schreibe deinen Kommentar:" required>
-                   <button type="button" onclick="sendComment(${index})"><div><img class="send_arrow" ></div></button>
-             </form>`;
+                   <input id="nameInput${index}" name="name" aria-label="Name eingeben" class="input_name" type="massage"  placeholder="Dein Name:" required>
+                   <input id="textInput${index}" aria-label="Kommentarfeld" autocomplete="off" type="massage" placeholder="Schreibe deinen Kommentar:" required>
+                   <button type="submit"  title="Senden" onclick="sendComment(${index})"><div><img src="./img/icons8-hoch-2-30.png" alt="Sende-Pfeil" class="send_arrow"></div></button>
+              </form>`;
+
 }

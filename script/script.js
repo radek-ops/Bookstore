@@ -6,7 +6,7 @@ let books = [
         "title": "Die Geheimnisse des Ozeans",
         "author": "Clara Meer",
         "likes": 1250,
-        "liked": true,
+        "liked": false,
         "price": 19.99,
         "publishedYear": 2018,
         "genre": "Fantasy",
@@ -49,7 +49,7 @@ let books = [
         "title": "Die Farben des Himmels",
         "author": "Laura Blau",
         "likes": 1520,
-        "liked": true,
+        "liked": false,
         "price": 22.95,
         "publishedYear": 2019,
         "genre": "Romantik",
@@ -101,7 +101,7 @@ let books = [
         "title": "Der letzte Wächter",
         "author": "Sabine Grün",
         "likes": 1300,
-        "liked": true,
+        "liked": false,
         "price": 16.75,
         "publishedYear": 2017,
         "genre": "Fantasy",
@@ -132,7 +132,7 @@ let books = [
         "title": "Jenseits der Sterne",
         "author": "Oliver Schwarz",
         "likes": 1450,
-        "liked": true,
+        "liked": false,
         "price": 21.00,
         "publishedYear": 2015,
         "genre": "Science-Fiction",
@@ -164,7 +164,7 @@ let books = [
         "title": "Liebe in Zeiten des Krieges",
         "author": "Emilia Rot",
         "likes": 1800,
-        "liked": true,
+        "liked": false,
         "price": 19.99,
         "publishedYear": 2016,
         "genre": "Romantik",
@@ -189,8 +189,10 @@ let books = [
 ]
 
 
-let bookselection = document.getElementById('bookSelection');
+const bookselection = document.getElementById('bookSelection');
 let booksArry = [];
+let dislike = "./img/icons8-herzen-50.png"
+let like = "./img/icons8-herzen-rot-48.png"
 
 
 function init() {
@@ -201,25 +203,48 @@ function init() {
 function booksObjArry() {
     bookselection.innerHTML = '';
     booksArry = books.filter((createArry) => { return createArry['book'] }); //erzeugt ein Array von ObjeKten. 
-    console.log(booksArry);
-
 
     for (let index = 0; index < booksArry.length; index++) {
         let singleBook = booksArry[index];
         let saveAllBooks = addBooks(index);//hier kein += die Variable ist noch ohne wert dort kann man nichts hinzufügen erst unten bei den kommentaren . 
 
         for (let commindex = 0; commindex < singleBook.comments.length; commindex++) {
-            let singleComment = singleBook.comments[commindex];
+            const singleComment = singleBook.comments[commindex];
             let commArry = addComments(singleComment);
             saveAllBooks += commArry;
         }
-
         saveAllBooks += "</div>";
         saveAllBooks += inputComment(index);
         saveAllBooks += "</section>";
         bookselection.innerHTML += saveAllBooks;
     }
 }
+
+
+function likeClick(index) {
+    let sumLikes = document.getElementById(`sumLikes${index}`);
+    let currentValue = sumLikes.innerHTML;
+
+    let likeIcon = document.getElementById(`likeIcon${index}`);
+    let currentIcon = likeIcon.src;
+    console.log(currentIcon);
+
+
+    if (booksArry[index].liked === false) {
+        sumLikes.innerHTML = parseInt(currentValue) + 1;
+        likeIcon.src = like;
+        books[index].liked = true;
+
+
+    }
+    else if (booksArry[index].liked === true) {
+        sumLikes.innerHTML = parseInt(currentValue) - 1;
+        likeIcon.src = dislike;
+        books[index].liked = false;
+    }
+
+}
+
 
 
 function sendComment(index) {
@@ -229,27 +254,21 @@ function sendComment(index) {
     let textName = name.value;   //komplexe variable immer mit . zugreifen 
     let textComment = text.value;
 
-    if (textName || textComment <= 0) {
-        alert('Tippe Sie Name und Kommentar ein');
+
+    if (textComment.length === 0 || textName === 0) {
+        confirm('Tippen Sie zu Erst Name und Kommentar ein');
         return;
     }
+
 
     let userInput = {
         "name": textName,
         "comment": textComment
     };
 
-    books[index].comments.push(userInput);
+    books[index].comments.push(userInput); Ger:
     booksObjArry();
 }
-
-
-
-
-
-
-
-
 
 
 

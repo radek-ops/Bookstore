@@ -32,15 +32,7 @@ html
 }
 
 
-h2
-{
-    display: flex;
-    justify-content: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 28px;
-    margin: 0;
-    padding: 30px 0 30px 0;
-}
+
 
 
 .underline
@@ -109,14 +101,6 @@ table
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     padding-bottom: 30px;
-}
-
-
-h3
-{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 24px;
-    margin-left: 20px;
 }
 
 
@@ -214,15 +198,7 @@ input
 {
     width: 30px;
     height: 30px;
-    background-color: var(--underline-color);
-    -webkit-mask-image: url('./img/icons8-hoch-2-30.png');
-    mask-image: url('./img/icons8-hoch-2-30.png');
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
+    background-color: transparent;
     cursor: pointer;
 
 }
@@ -234,8 +210,16 @@ input
     margin-right: 15px;
 }
 
+
 button
 {
     background-color: transparent;
     border-radius: 5px;
+}
+
+
+.like_button
+{
+    background-color: transparent;
+    border: none;
 }
